@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(curl -s https://pypi.org/pypi/bcrypt/json)"
+    ]
+  }
+}
