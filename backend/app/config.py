@@ -15,6 +15,10 @@ class Settings(BaseSettings):
     GITHUB_TOKEN: str = ""
     GITHUB_USERNAME: str = "DrazThan"
 
+    # Comma-separated list of allowed CORS origins
+    # e.g. "https://myapp.railway.app,http://localhost:5173"
+    CORS_ORIGINS: str = "http://localhost:5173"
+
     model_config = {"env_file": ".env"}
 
 
