@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-slate-50 dark:bg-mid-bg text-slate-900 dark:text-slate-100 font-sans antialiased;
+    /* Safe area insets for iPhone notch / home indicator */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  * {
+    @apply select-none;
+  }
+
+  input, textarea {
+    @apply select-text;
+  }
+}
+
+@layer components {
+  /* Shared card style */
+  .card {
+    @apply rounded-2xl bg-white dark:bg-mid-card border border-slate-200 dark:border-mid-border;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply flex items-center justify-center gap-2 w-full rounded-xl bg-blue-500 hover:bg-blue-600 active:bg-blue-700
+           text-white font-semibold py-3 px-4 transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-mid-border
+           text-slate-600 dark:text-slate-300 font-medium py-2.5 px-4 transition-colors duration-150
+           hover:bg-slate-100 dark:hover:bg-mid-surface active:bg-slate-200 dark:active:bg-mid-border;
+  }
+
+  /* Page container — accounts for the 64px bottom nav */
+  .page {
+    @apply min-h-screen pb-24 px-4 pt-6 max-w-lg mx-auto animate-fade-in;
+  }
+}
