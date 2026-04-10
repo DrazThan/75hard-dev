@@ -9,7 +9,9 @@ export async function login(username: string, password: string): Promise<Token> 
   return data
 }
 
-export async function me(): Promise<User> {
-  const { data } = await http.get<User>('/auth/me')
+export async function me(token?: string): Promise<User> {
+  const { data } = await http.get<User>('/auth/me', {
+    headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+  })
   return data
 }

@@ -18,7 +18,7 @@ export default function Login() {
     setLoading(true)
     try {
       const token = await authApi.login(username, password)
-      const user  = await authApi.me()
+      const user  = await authApi.me(token.access_token)
       setAuth(token.access_token, user)
       navigate('/today', { replace: true })
     } catch {
