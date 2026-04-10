@@ -17,9 +17,8 @@ env/
 !.env.example
 !frontend/.env.example
 
-# Alembic
-backend/alembic/versions/*.py
-!backend/alembic/versions/.gitkeep
+# Alembic — migration files must be committed
+
 
 # Node
 frontend/node_modules/
