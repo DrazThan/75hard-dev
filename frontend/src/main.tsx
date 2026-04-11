@@ -9,6 +9,12 @@ const stored = localStorage.getItem('theme-store')
 const isDark = stored ? JSON.parse(stored)?.state?.isDark ?? true : true
 document.documentElement.classList.toggle('dark', isDark)
 
+// Debug: confirm resolved API URL on startup
+if (import.meta.env.VITE_LOG_LEVEL === 'debug') {
+  console.debug('[75Hard] API URL:', import.meta.env.VITE_API_URL ?? '⚠️  NOT SET')
+  console.debug('[75Hard] Log level: debug')
+}
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: { retry: 1, staleTime: 30_000 },
